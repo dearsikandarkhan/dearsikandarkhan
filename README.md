@@ -1,43 +1,143 @@
+<!-- 👋 Reading the source? Same person, fewer emojis. Say hi on LinkedIn. -->
+
 <div align="center">
 
-# Hey, I'm Sikandar 👋
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&pause=1400&color=14B8A6&center=true&vCenter=true&width=720&lines=%24+whoami;sikandar+%E2%80%94+engineer%2C+still+shipping+daily.;%24+git+log+--since%3D2014+%7C+wc+-l;13%2B+years+of+commits+and+counting.;%24+deploy+--agent+--env%3Dprod;%E2%9C%93+agentic+AI%2C+running+in+production." alt="$ whoami — sikandar, engineer, still shipping daily" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=14B8A6&center=true&vCenter=true&width=680&lines=Engineer+first.+13%2B+years+shipping+software.;Building+agentic+AI+that+runs+in+production.;GraphRAG+%C2%B7+LangGraph+%C2%B7+Bedrock+AgentCore;Teaching+IB+Computer+Science+since+2017." alt="Engineer first. Building agentic AI that runs in production." />
-
-**AI Delivery Lead @ AiFA Labs** · IIIT Basar CSE grad · IB CS mentor · Hyderabad 🇮🇳
-
-I started as an engineer and never stopped being one. These days I lead teams building AI agents,<br>
-but I still code most days, because that's how I understand what we're shipping.
-
-<a href="https://linkedin.com/in/dearsikandarkhan"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-<a href="https://dearsikandarkhan.medium.com/"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium"/></a>
-<a href="https://ibcswithsikandar.netlify.app/"><img src="https://img.shields.io/badge/Teaching-IB_Computer_Science-F59E0B?style=for-the-badge&logo=bookstack&logoColor=white" alt="IB Computer Science teaching"/></a>
-<a href="https://dearsikandarkhan.github.io/"><img src="https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/></a>
-<img src="https://komarev.com/ghpvc/?username=dearsikandarkhan&style=for-the-badge&color=14B8A6&label=Profile+views" alt="Profile views"/>
+<a href="https://linkedin.com/in/dearsikandarkhan"><img src="https://img.shields.io/badge/linkedin-dearsikandarkhan-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="https://dearsikandarkhan.medium.com/"><img src="https://img.shields.io/badge/medium-writing-12100E?style=flat-square&logo=medium&logoColor=white" alt="Medium"/></a>
+<a href="https://ibcswithsikandar.netlify.app/"><img src="https://img.shields.io/badge/teaching-IB_Computer_Science-F59E0B?style=flat-square&logo=bookstack&logoColor=white" alt="IB Computer Science"/></a>
+<a href="https://dearsikandarkhan.github.io/"><img src="https://img.shields.io/badge/portfolio-github.io-0F172A?style=flat-square&logo=github&logoColor=white" alt="Portfolio"/></a>
+<img src="https://komarev.com/ghpvc/?username=dearsikandarkhan&style=flat-square&color=14B8A6&label=views" alt="Profile views"/>
 
 </div>
 
----
+```yaml
+# sikandar.yaml  ·  kubectl apply -f sikandar.yaml
+apiVersion: humans/v1
+kind: Engineer
+metadata:
+  name: sikandar-khan
+  region: ap-south-2            # Hyderabad, India
+  labels:
+    role: technical-program-manager
+    focus: agentic-ai
+    mode: hands-on               # never left the codebase
+spec:
+  compiledAt: IIIT-Basar         # B.Tech CSE, class of 2014
+  current:
+    org: AiFA Labs
+    building: production AI agents (GraphRAG · LangGraph · Bedrock AgentCore)
+  runtimes: [python, node, typescript, java, dart]
+  sideProcesses:
+    - ai-readiness-lint          # OSS
+    - pi-voice-agent             # Raspberry Pi
+    - ib-cs-mentoring            # since 2017
+  restartPolicy: Always
+```
 
-## ⚡ Daily activity
+## `$ top` — what's running
+
+```text
+  PID  PROCESS                 STATE      STACK
+  001  prod-agent@aifa         ● running   LangGraph · Neo4j GraphRAG · Langfuse · Bedrock AgentCore
+  002  ai-readiness-lint       ● running   Node.js CLI · CI gate · SVG badge
+  003  pi-voice-agent          ◐ building  Raspberry Pi · speech in → agent → speech out
+  004  ib-cs-mentoring         ⏱ cron      Python · Java · IA · EE      (weekly, since 2017)
+```
+
+## `$ cat ARCHITECTURE.md` — the agent I'm shipping
+
+```mermaid
+flowchart LR
+    subgraph IN[" input "]
+      CR([SAP change request])
+    end
+    subgraph CORE[" AWS Bedrock AgentCore "]
+      direction TB
+      G[LangGraph<br/>state machine]
+      KG[(Neo4j<br/>knowledge graph)]
+      V[(OpenAI<br/>embeddings)]
+      G <-->|GraphRAG| KG
+      G <-->|semantic recall| V
+    end
+    subgraph SAFE[" production gates "]
+      direction TB
+      E{evals +<br/>guardrails}
+      H[/human review/]
+    end
+    CR --> G --> E
+    E -->|confident| OUT([CR / CO drafted])
+    E -->|uncertain| H --> OUT
+    G -.traces · cost · latency.-> LF[[Langfuse]]
+```
+
+> **Result:** SAP Solution Manager CR/CO processing went from **~10 h → ~3 h** per request. It's the organisation's first production AI agent.
+
+## `$ ls ~/oss`
+
+```text
+ai-readiness-lint/   static linter for AI-agent repos
+│                    repo ──▶ 8 governance checks ──▶ score 0–100 ──▶ CI gate + badge
+│                    evals · guardrails · HITL · observability · cost limits · …
+npm-packages/        CSRF prevention · dependency analysis
+resume-platform/     open-source resume builder
+```
+
+👉 [**ai-readiness-lint**](https://github.com/dearsikandarkhan/ai-readiness-lint): because "is this agent ready for prod?" deserves an answer you can run in CI.
+
+## `$ git log --graph --oneline career`
+
+```mermaid
+gitGraph
+    commit id: "B.Tech CSE · IIIT Basar" tag: "2014"
+    commit id: "11+ yrs shipping software"
+    branch teaching
+    checkout teaching
+    commit id: "IB CS mentoring" tag: "2017"
+    checkout main
+    commit id: "DocOnline Health" tag: "2022"
+    commit id: "35+ feature health app"
+    commit id: "SonarCloud · VAPT · ISO 27001"
+    checkout teaching
+    commit id: "Smart India Hackathon mentor"
+    checkout main
+    commit id: "AiFA Labs" tag: "2026"
+    commit id: "first prod AI agent" type: HIGHLIGHT
+    merge teaching tag: "HEAD"
+```
+
+## `$ cat /proc/toolchain`
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=py,fastapi,nodejs,ts,java,flutter,aws,gcp,docker,kubernetes,nginx,linux,raspberrypi,githubactions&perline=14" alt="Tech stack icons" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangGraph"/>
+  <img src="https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white" alt="Neo4j"/>
+  <img src="https://img.shields.io/badge/Bedrock_AgentCore-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="Bedrock AgentCore"/>
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI"/>
+  <img src="https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=anthropic&logoColor=white" alt="Claude"/>
+  <img src="https://img.shields.io/badge/Langfuse-0A0A0A?style=flat-square" alt="Langfuse"/>
+  <img src="https://img.shields.io/badge/SonarCloud-F3702A?style=flat-square&logo=sonarcloud&logoColor=white" alt="SonarCloud"/>
+</p>
+
+## `$ git shortlog -s --since=today` — daily commits
 
 <div align="center">
+
+<img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution calendar" width="100%"/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=dearsikandarkhan&theme=dark&hide_border=true&background=0D1117&ring=14B8A6&fire=F59E0B&currStreakLabel=14B8A6">
   <img src="https://streak-stats.demolab.com?user=dearsikandarkhan&theme=default&hide_border=true&ring=14B8A6&fire=F59E0B&currStreakLabel=0F766E" alt="GitHub streak" />
 </picture>
 
-<br><br>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=dearsikandarkhan&bg_color=0D1117&color=E6EDF3&line=14B8A6&point=F59E0B&area=true&area_color=14B8A6&hide_border=true&custom_title=commits%20%C2%B7%20last%2031%20days" alt="Contribution activity graph" width="100%"/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=dearsikandarkhan&bg_color=0D1117&color=E6EDF3&line=14B8A6&point=F59E0B&area=true&area_color=14B8A6&hide_border=true&custom_title=Contributions%20over%20the%20last%2031%20days" alt="Contribution activity graph" width="100%"/>
-
-<br>
-
-<img src="https://github-readme-stats.vercel.app/api?username=dearsikandarkhan&show_icons=true&hide_border=true&theme=transparent&title_color=14B8A6&icon_color=14B8A6&include_all_commits=true" alt="GitHub stats" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api?username=dearsikandarkhan&show_icons=true&hide_border=true&theme=transparent&title_color=14B8A6&icon_color=14B8A6&include_all_commits=true&count_private=true" alt="GitHub stats" height="165"/>
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dearsikandarkhan&layout=compact&hide_border=true&theme=transparent&title_color=14B8A6&langs_count=8" alt="Top languages" height="165"/>
-
-<br><br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dearsikandarkhan/dearsikandarkhan/output/github-contribution-grid-snake-dark.svg">
@@ -47,104 +147,41 @@ but I still code most days, because that's how I understand what we're shipping.
 
 </div>
 
-## 🛠️ What I'm building right now
+## `$ man ibcs` — teaching
 
-The organisation's first production AI agent. This is roughly how it's put together:
+```python
+class IBComputerScience(Mentor):
+    """Turning abstract CS into things students can explain, build and defend."""
 
-```mermaid
-flowchart LR
-    A[Change request] --> B[LangGraph agent]
-    B -->|retrieve| C[(GraphRAG<br/>Neo4j + OpenAI embeddings)]
-    B -->|act| D[SAP Solution Manager]
-    B --> E{Evals & guardrails}
-    E -->|pass| F[Output]
-    E -->|uncertain| G[Human review]
-    B -.traces.-> H[Langfuse]
+    since     = 2017
+    levels    = ("HL", "SL")
+    languages = ("Python", "Java")
+    covers    = ["core theory", "Internal Assessment", "Extended Essay", "exam prep"]
+    edge      = "11+ years of production code: students see what good code looks like in practice"
+    invariant = "the IA and EE are always the student's own work"
 ```
 
-<sub>Runs on AWS Bedrock AgentCore. It automates SAP Change Request / Change Order processing, cutting each request from about 10 hours to about 3.</sub>
+📚 **[ibcswithsikandar.netlify.app](https://ibcswithsikandar.netlify.app/)**: syllabus map, IA survival kit, key definitions and study materials.
 
-**On my own time:**
-
-- 🔍 **[ai-readiness-lint](https://github.com/dearsikandarkhan/ai-readiness-lint)** is a Node.js CLI that statically checks an AI agent repo for production readiness: evals, guardrails, HITL, observability, cost limits and more. It scores 0–100, runs in CI, and emits a badge.
-- 🎙️ **Voice agents on a Raspberry Pi**: real-time speech in, agent reply out, on hardware that fits in a palm.
-- 📦 **NPM packages** for CSRF prevention and dependency analysis, plus an open-source resume platform.
-
-## 🧭 Recent work
-
-| Years | Role | What I built |
-|---|---|---|
-| 2026 – now | AI Delivery Lead · **AiFA Labs** | Production agentic AI: GraphRAG, LangGraph, Langfuse, Bedrock AgentCore |
-| 2022 – 26 | Technical Manager · **DocOnline Health** | Mental-health app (35+ features), Stepathon for 20K+ users, SonarCloud + VAPT + ISO 27001-aligned security |
-
-## 🧰 Toolbox
-
-**AI / Agents** &nbsp;
-![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white)
-![Bedrock](https://img.shields.io/badge/Bedrock_AgentCore-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=anthropic&logoColor=white)
-![Langfuse](https://img.shields.io/badge/Langfuse-0A0A0A?style=flat-square)
-
-**Code** &nbsp;
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Dart](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
-
-**Infra** &nbsp;
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![nginx](https://img.shields.io/badge/nginx-009639?style=flat-square&logo=nginx&logoColor=white)
-![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white)
-
-## 🎓 Teaching
-
-<table>
-<tr>
-<td width="65%" valign="top">
-
-I've mentored **IB Computer Science** students since 2017, across both HL and SL.
-
-- Core theory and programming in **Python & Java**
-- **Internal Assessment**: picking a real client, then designing, building and testing the project
-- **Extended Essay**: research questions, methodology, structure
-
-Eleven years of building real software is what I bring to the classroom. Students see what good code looks like in practice, not just in the textbook. The IA and EE always remain the student's own work.
-
-I also mentor student teams at **Smart India Hackathon**.
-
-</td>
-<td width="35%" align="center" valign="middle">
-
-<a href="https://ibcswithsikandar.netlify.app/">
-  <img src="https://img.shields.io/badge/ibcswithsikandar-Visit_site-F59E0B?style=for-the-badge&logo=netlify&logoColor=white" alt="Teaching site"/>
-</a>
-
-<sub>Syllabus map · IA kit · key definitions · study materials</sub>
-
-</td>
-</tr>
-</table>
-
-## ✍️ Latest on Medium
+## `$ tail -f medium.log`
 
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->
 
-## 🏅 Bits & badges
+## `$ cat achievements.log`
 
-- 🥇 1st Prize, Smart Health IoT track, **Asia-Pacific Hackathon 2018** (New Zealand)
-- 🏆 **Capgemini Innovative Startup Award**
-- ☁️ Google Cloud Architect, Kubernetes Engine Specialization · 🧩 CSM · CSPO
-- 🎓 **B.Tech, Computer Science & Engineering — IIIT Basar (RGUKT)**, graduated 2014
-- 📘 Executive education in Product Management, **ISB** (2024)
+```diff
++ [2018] 1st prize · Smart Health IoT · Asia-Pacific Hackathon, New Zealand
++ [----] Capgemini Innovative Startup Award
++ [2024] Google Cloud Architect · Kubernetes Engine Specialization
++ [2024] CSM · CSPO · Scrum Alliance
++ [2024] Executive education, Product Management · ISB
+```
 
 <div align="center">
-<sub>Usually found somewhere between a LangGraph trace and a Raspberry Pi.</sub>
+
+```console
+$ exit 0   # see you in the commit history
+```
+
 </div>
